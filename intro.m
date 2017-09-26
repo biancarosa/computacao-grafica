@@ -48,3 +48,13 @@ arara_full_bmp = imread("imagens/arara_full.bmp");
 arara_full_256_png = imread("imagens/arara_full_256.png");
 imshow(arara_full);
 imshow(arara_full_256);
+
+# Conversao de imagens
+[X, MAP] = rgb2ind(arara_full);
+imshow(X,MAP);
+
+# Criando figures
+figure
+imshow(X,MAP)
+figure
+imshow(RGB)
