@@ -1,14 +1,29 @@
 pkg load image;
 
-leme = imread("imagens/leme.bmp");
-leme = im2double(leme);
+img = imread("imagens/lion.png");
+
+F = fspecial('gaussian', 5, 10.0);
+I = imfilter(img, F);
 
 figure;
 subplot(2,1,1);
-imshow(leme);
-title("Imagem original");
+title("Original");
+imshow(img)
 subplot(2,1,2);
-clearer = imadjust(leme,[],[],0.5);
-imshow(clearer);
-title("Partes mais escuras mais claras");
-print -djpg geradas/clearer_leme.jpg
+title("Filtro Gaussiano");
+imshow(I);
+print -djpg geradas/lion_gaussian_filtered.jpg
+
+img = imread("imagens/arara_full.png");
+
+F = fspecial('gaussian', 5, 10.0);
+I = imfilter(img, F);
+
+figure;
+subplot(2,1,1);
+title("Original");
+imshow(img)
+subplot(2,1,2);
+title("Filtro Gaussiano");
+imshow(I);
+print -djpg geradas/arara_gaussian_filtered.jpg
