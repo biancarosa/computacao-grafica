@@ -24,6 +24,6 @@ subplot(2,1,1);
 title("Original");
 imshow(img)
 subplot(2,1,2);
-title("Filtro Gaussiano");
+title("Filtro Disco");
 imshow(I);
 print -djpg geradas/arara_disk_filtered.jpg

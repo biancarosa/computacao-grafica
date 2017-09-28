@@ -2,7 +2,7 @@ pkg load image;
 
 img = imread("imagens/lion.png");
 
-F = ones(5) * 1/25)
+F = ones(5) * 1/25
 I = imfilter(img, F);
 
 figure;
