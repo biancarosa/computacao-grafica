@@ -30,7 +30,7 @@ subplot(2, 1, 1);
 filtered = img_sh + img_sv;
 imshow(filtered);
 
-filtered = filtered - 0.4;
+filtered = filtered - 0.25;
 subplot(2, 1, 2);
 imshow(filtered);
 
@@ -84,3 +84,11 @@ red = im2double(red);
 NDVI = (nir - red) / (nir + red);
 
 bw =  im2bw(NDVI, 0.09);
+
+digital = imread("imagens/digital.png");
+imshow(digital);
+digital = im2double(digital);
+imhist(digital);
+d = im2double(digital < 0.8);
+d = im2double(digital > 0.3);
+imshow(d);
