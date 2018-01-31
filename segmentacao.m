@@ -26,6 +26,19 @@ imshow(img_sv);
 title("Sobel Vertical");
 
 figure;
+sobel_diag1 = [ 0 1 2; -1 0 1; -2 -1 0];
+img_sa1 = imfilter(img, sobel_diag1);
+subplot(2, 1, 1);
+imshow(img_sa1);
+title("Sobel Diagonal 1");
+
+sobel_diag2 = [ -2 -1 0; -1 0 1; 0 1 2];
+img_sa2 = imfilter(img, sobel_diag2);
+subplot(2, 1, 2);
+imshow(img_sa2);
+title("Sobel Diagonal 2");
+
+figure;
 subplot(2, 1, 1);
 filtered = img_sh + img_sv;
 imshow(filtered);
@@ -92,3 +105,20 @@ imhist(digital);
 d = im2double(digital < 0.8);
 d = im2double(digital > 0.3);
 imshow(d);
+
+# Amarelo: 
+# π/6 > ângulo >  -π/6 
+# 30 > angulo > -30
+# 30 > angulo > -30
+
+# Verde: 
+# π/3 > ângulo > π/6
+# 60 > angulo > 30
+
+# Vermelho: 
+# -π/6 > ângulo > -π/3
+# -30 > angulo > -60
+
+# Azul:
+# -π/3 > ângulo > π/3
+# -60 > angulo > 60
