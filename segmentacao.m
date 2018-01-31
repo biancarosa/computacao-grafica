@@ -74,3 +74,13 @@ figure;
 title("Andy - funcao edge");
 edg = edge(img, "Andy");
 imshow(edg);
+
+nir = imread("imagens/laranjeiras_nir.tif");
+red = imread("imagens/laranjeiras_r.tif");
+blue = imread("imagens/laranjeiras_b.tif");
+green = imread("imagens/laranjeiras_g.tif");
+nir = im2double(nir);
+red = im2double(red);
+NDVI = (nir - red) / (nir + red);
+
+bw =  im2bw(NDVI, 0.09);
