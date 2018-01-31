@@ -20,7 +20,7 @@ imshow(img_sh);
 title("Sobel Horizontal");
 
 img_sv = imfilter(img, sobel_vertical);
-subplot (2, 1, 2);
+subplot(2, 1, 2);
 imshow(img_sv);
 title("Sobel Vertical");
 
@@ -29,15 +29,51 @@ subplot(2, 1, 1);
 filtered = img_sh + img_sv;
 imshow(filtered);
 
-filtered = filtered - 0.2;
-subplot (2, 1, 2);
+filtered = filtered - 0.4;
+subplot(2, 1, 2);
 imshow(filtered);
 
 figure;
-colored = gray2ind(filtered);
-imshow(colored);
+subplot(1, 1, 1);
+edg = edge(img, "Sobel");
+imshow(edg);
 
 figure;
-# Utilizaçao da funcao edge para aplicar filtros
-edg = edge(img, "Sobel");
+edg = edge(img, "Canny");
+imshow(edg);
+
+figure;
+edg = edge(img, "Kirsch");
+imshow(edg);
+
+figure;
+edg = edge(img, "Lindeberg");
+imshow(edg);
+
+figure;
+edg = edge(img, "LoG");
+imshow(edg);
+
+figure;
+edg = edge(img, "Roberts");
+imshow(edg);
+
+
+figure;
+edg = edge(img, "zerocross");
+imshow(edg);
+
+
+figure;
+edg = edge(img, "Andy");
+imshow(edg);
+
+
+figure;
+edg = edge(img, "Roberts");
+imshow(edg);
+
+
+figure;
+edg = edge(img, "Roberts");
 imshow(edg);
