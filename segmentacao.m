@@ -15,6 +15,7 @@ sobel_vertical = [-1 0 1; -2 0 2; -1 0 1];
 
 img_sh = imfilter(img, sobel_horizontal);
 figure;
+title("Sobel")
 subplot(2, 1, 1);
 imshow(img_sh);
 title("Sobel Horizontal");
@@ -34,46 +35,42 @@ subplot(2, 1, 2);
 imshow(filtered);
 
 figure;
+title("Sobel - funcao edge");
 subplot(1, 1, 1);
 edg = edge(img, "Sobel");
 imshow(edg);
 
 figure;
+title("Canny - funcao edge");
 edg = edge(img, "Canny");
 imshow(edg);
 
 figure;
+title("Kirsch - funcao edge");
 edg = edge(img, "Kirsch");
 imshow(edg);
 
 figure;
+title("Lindeberg - funcao edge");
 edg = edge(img, "Lindeberg");
 imshow(edg);
 
 figure;
+title("LoG - funcao edge");
 edg = edge(img, "LoG");
 imshow(edg);
 
 figure;
+title("Roberts - funcao edge");
 edg = edge(img, "Roberts");
 imshow(edg);
 
-
 figure;
+title("zerocross - funcao edge");
 edg = edge(img, "zerocross");
 imshow(edg);
 
-
 figure;
+title("Andy - funcao edge");
 edg = edge(img, "Andy");
-imshow(edg);
-
-
-figure;
-edg = edge(img, "Roberts");
-imshow(edg);
-
-
-figure;
-edg = edge(img, "Roberts");
 imshow(edg);
