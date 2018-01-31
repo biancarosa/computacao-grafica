@@ -1,4 +1,4 @@
-# Computação Gráfica - UERJ 2017.2
+# Computação Gráfica - UERJ 2017.1
 
 ## Octave
 - intro.m
