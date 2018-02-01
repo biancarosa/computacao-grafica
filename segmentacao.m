@@ -63,7 +63,7 @@ angulo_ind = angulo;
 # Amarelo: 
 # π/6 > ângulo >  -π/6 
 # 30 > angulo > -30
-angulo_ind(find(angulo > -pi/6)) = 1;o
+angulo_ind(find(angulo > -pi/6)) = 1;
 
 # Vermelho: 
 # -π/6 > ângulo > -π/3
@@ -82,13 +82,17 @@ angulo_ind(find(angulo > pi/6)) = 2;
 angulo_ind(find(angulo > pi/3)) = 4;
 
 MAP = [0 0 0; 1 1 0; 0 1 0; 1 0 0;  0 0 1];
+figure;
+subplot(1, 1, 1);
 imshow(angulo_ind, MAP);
 print -djpg geradas/segmentacao6.jpg
 
 shv = img_sh + img_sv;
 shv(find(shv<0.2)) = 0;
 shv(find(shv>0.2)) = 1;
+figure;
 imshow(shv);
+print -djpg geradas/segmentacao6_1.jpg
 
 imshow(angulo_ind .* shv, MAP);
 print -djpg geradas/segmentacao7.jpg
@@ -132,7 +136,7 @@ print -djpg geradas/segmentacao13.jpg
 
 figure;
 title("zerocross - funcao edge");
-edg = edge(img, "zerocross");
+edg = edge(img, "zerocross", 5, 15);
 imshow(edg);
 print -djpg geradas/segmentacao14.jpg
 
