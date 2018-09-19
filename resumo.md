@@ -44,7 +44,7 @@ visual
 - modelagem e visualização
 - textura e iluminação
 
-# CG
+# Introdução
 Conjunto técnicas para transformar dados em imagens através de um dispositivo gráfico.
 
 
@@ -81,3 +81,36 @@ dados que a geraram, ou sobre objetos nela presentes.
 
 ## Eficiencia x Realismo
 Trade-off.
+
+# Segmentação
+
+Conceitos básicos de um conjunto de abordagens para a segmentação de imagens digitais.
+
+Algoritmo de segmentação são baseados em uma ou duas propriedades básicas dos valores de intensidade dos pixels: 
+1. descontinuidade
+2. similaridade
+
+## Detecção de bordas
+
+Formulação básica:
+Borda ideal: conjunto de pixels conectados, localizados em uma transição ortogonal dos valores de intensidade.
+Borda real: tem um perfil de “rampa”.
+
+Conclusões:
+1. Magnitude da 1a derivada→ evidencia de uma borda
+2. Sinal da 2a derivada determina lados claro/escuro
+3. 2a derivada tem 2 valores para cada borda
+4. Linha ligando os valores extremos (positivo e negativa) da 2a derivada cruza o zero no ponto médio
+
+Ponto numa imagem é ponto de borda quando sua derivada de primeira ordem é maior que um limiar, ou está no cruzamento por zero da segunda derivada.
+
+Borda: conjunto conectado de pontos de borda.
+Borda ocorre na fronteira de duas regiões.
+
+## Crescimento de regiões
+
+Definição: procedimento que agrupa pixels ou sub-regiões em regiões maiores baseado em algum critério.
+
+Envolve dois passos iterativos:
+Seleciona um conjunto de “sementes”, e
+Sementes/regiões crescem, agregando pixels vizinhos “similares”.
