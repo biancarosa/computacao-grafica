@@ -1,4 +1,4 @@
-function rotacao(MP)
+function retval = rotacao(MP)
   P0 = MP(1,:)';
   P1 = MP(2,:)';
   P2 = MP(3,:)';
@@ -7,7 +7,7 @@ function rotacao(MP)
   # centro do objeto = min() + ((min() - max() / 2)
   # tx - negativo das coordenadas do centro
   # ty - negativo das coordenadas do centro
-  T = [1 0 0; 0 1 0; tx ty 1];
+  T = [1 0 0; 0 1 0; -1.5 -1.5 1];
   alpha = pi / 4;
   R = [cos(alpha) -sin(alpha) 0; sin(alpha) cos(alpha) 0; 0 0 1];
   Ti = inv(T);
@@ -16,12 +16,7 @@ function rotacao(MP)
   P11 = Tf * P1;
   P21 = Tf * P2;
   P31 = Tf * P3;
-  figure;
-  axis([-4, 4, -4, 4], "square");
-  line([P01(1) P11(1)], [P01(2) P11(2)], "color","b");
-  line([P11(1) P21(1)], [P11(2) P21(2)], "color","b");
-  line([P21(1) P31(1)], [P21(2) P31(2)], "color","b");
-  line([P31(1) P01(1)], [P31(2) P01(2)], "color","b");
+  retval = [P01'; P11'; P21'; P31'];
 endfunction
 
 # M = zeros(size(P,2)),
