@@ -5,11 +5,12 @@ function retval = rotacao(X, Y)
   P3 = X(4,:)';
   R = [cos(Y) -sin(Y) 0; sin(Y) cos(Y) 0; 0 0 1];
   T = [1 0 0; 0 1 0; -1.5 -1.5 1];
-  Ti = R * T;
-  P01 = Ti * P0;
-  P11 = Ti * P1;
-  P21 = Ti * P2;
-  P31 = Ti * P3;
+  Ti = inv(T);
+  Tf = Ti * R * T;
+  P01 = Tf * P0;
+  P11 = Tf * P1;
+  P21 = Tf * P2;
+  P31 = Tf * P3;
   retval = [P01'; P11'; P21'; P31'];
 endfunction
 
