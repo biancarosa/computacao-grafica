@@ -1,8 +1,11 @@
-function mostra_figura(MP)
+function mostra_figura(X)
   clf;
-  axis([-4, 4, -4, 4], "square");
-  line([MP(1,1) MP(2,1)], [MP(1,2) MP(2,2)], "color","b");
-  line([MP(2,1) MP(3,1)], [MP(2,2) MP(3,2)], "color","b");
-  line([MP(3,1) MP(4,1)], [MP(3,2) MP(4,2)], "color","b");
-  line([MP(4,1) MP(1,1)], [MP(4,2) MP(1,2)], "color","b");
+  axis_limit = max(max(max(X), min(X))) * 2;
+  axis([-axis_limit, axis_limit, -axis_limit, axis_limit], "square");
+  MP = X';
+  sz = size(MP);
+  for i = 1:sz(1)
+    nxt = mod(i,sz(1)) + 1
+    line([MP(i,1) MP(nxt,1)], [MP(i,2) MP(nxt,2)], "color","b");
+  endfor
 endfunction
