@@ -64,7 +64,4 @@ subplot(1,2,2);
 imshow(imT);
 title('Imagem Transformada');
 
-
-#CHAMADA : transforma_projetiva('Placa_de_Transito_PARE.jpg', [0 0 3 4;1 350 4 300; 350 1 390 4; 350 350 300 350]);
-
 endfunction
